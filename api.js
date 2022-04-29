@@ -18,7 +18,7 @@ router.post("/name", async (req, res) => {
   res.status(200).json("Hello world!");
 });
 
-router.get("/GetTotalVideoSize", async (req, res) => {
+router.get("/getTotalVideoSize", async (req, res) => {
   try {
     const { CreatedBy } = req.body;
     var totalSize = 0;
@@ -35,7 +35,7 @@ router.get("/GetTotalVideoSize", async (req, res) => {
   }
 });
 
-router.get("/GetVideoMetadata", async (req, res) => {
+router.get("/getVideoMetadata", async (req, res) => {
   try {
     const { id } = req.body;
     const item = (await Video.find({ id: id }).exec())[0];
@@ -48,7 +48,7 @@ router.get("/GetVideoMetadata", async (req, res) => {
   }
 });
 
-router.patch("/UpdateVideoData", async (req, res) => {
+router.patch("/updateVideoData", async (req, res) => {
   try {
     const { id, videoSize, viewerCount } = req.body;
     const item = (await Video.find({ id }).exec())[0];
